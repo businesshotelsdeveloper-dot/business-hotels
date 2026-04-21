@@ -1,13 +1,23 @@
 {
-  "name": "business-hotels-mcp",
-  "version": "1.0.0",
+  "name": "@businesshotels/mcp-server",
+  "version": "1.0.1",
   "description": "Universal Agentic API for real-time hotel pricing and booking automation via BusinessHotels.com",
   "main": "build/index.js",
   "type": "module",
+  "bin": {
+    "business-hotels-mcp": "build/index.js"
+  },
+  "files": [
+    "build"
+  ],
   "scripts": {
     "build": "tsc",
     "start": "node build/index.js",
     "prepare": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/businesshotelsdeveloper-dot/business-hotels.git"
   },
   "keywords": [
     "mcp",
@@ -15,11 +25,19 @@
     "travel",
     "hotels",
     "booking",
-    "agentic-ai"
+    "agentic-ai",
+    "mcp-server"
   ],
   "author": "Drago Maximov",
   "license": "MIT",
+  "homepage": "https://www.businesshotels.com",
+  "bugs": {
+    "url": "https://github.com/businesshotelsdeveloper-dot/business-hotels/issues"
+  },
   "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.0.0"
+    "@modelcontextprotocol/sdk": "^1.0.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0"
   }
 }
