@@ -1,13 +1,24 @@
 {
   "name": "business-hotels-mcp",
   "version": "1.0.0",
-  "description": "MCP server for BusinessHotels.com travel tools",
+  "description": "Universal Agentic API for real-time hotel pricing and booking automation via BusinessHotels.com",
   "main": "build/index.js",
   "type": "module",
   "scripts": {
     "build": "tsc",
-    "start": "node build/index.js"
+    "start": "node build/index.js",
+    "prepare": "npm run build"
   },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "travel",
+    "hotels",
+    "booking",
+    "agentic-ai"
+  ],
+  "author": "Drago Maximov",
+  "license": "MIT",
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.0.0"
   }
