@@ -1,0 +1,14 @@
+{
+  "name": "business-hotels-mcp",
+  "version": "1.0.0",
+  "description": "MCP server for BusinessHotels.com travel tools",
+  "main": "build/index.js",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "start": "node build/index.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0"
+  }
+}
