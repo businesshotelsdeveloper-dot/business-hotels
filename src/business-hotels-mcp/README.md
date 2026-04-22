@@ -28,7 +28,10 @@ To add the Universal Agentic API to your local MCP settings, paste this into you
 }
 
 
-// QUICK TEST -  Browser DevTools Console (F12 → Console) → paste and hit Enter
+// QUICK TEST - Browser DevTools Console (F12 → Console) → paste and hit Enter
+// Note: This API key is for testing and light production. 
+// Contact ai@businesshotels.com for high-volume or full production access.
+
 fetch("https://www.businesshotels.com/mcp-server.php?route=tools/get_live_hotel_rates", {
   method: "POST",
   headers: {
@@ -49,4 +52,3 @@ fetch("https://www.businesshotels.com/mcp-server.php?route=tools/get_live_hotel_
   console.log("📊 Score:", data.best_match_score);
   console.log("Full response:", data);
 });
-
