@@ -4,7 +4,7 @@ This is the official [Model Context Protocol (MCP)](https://github.com/modelcont
 
 ---
 
-## Connection & Discovery
+## Connection & Discovery 
 
 This server is optimized for autonomous agents and "Bleisure" (business + leisure) travel workflows.
 
