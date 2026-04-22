@@ -4,7 +4,7 @@ This is the official [Model Context Protocol (MCP)](https://github.com/modelcont
 
 ## Connection & Discovery
 This server is optimized for autonomous agents and "Bleisure" (business + leisure) travel workflows.
-
+- **MCP Tools Configuration:** https://www.businesshotels.com/mcp-server.php?route=config
 - **MCP Tools Endpoint:** https://www.businesshotels.com/mcp-server.php?route=tool
 - **OpenAPI Spec:** [openapi.json](https://www.businesshotels.com/openapi.json)
 - MCP Discovery Spec: https://www.businesshotels.com/.well-known/mcp.json
@@ -26,4 +26,27 @@ To add the Universal Agentic API to your local MCP settings, paste this into you
     }
   }
 }
+
+
+// QUICK TEST -  Browser DevTools Console (F12 → Console) → paste and hit Enter
+fetch("https://www.businesshotels.com/mcp-server.php?route=tools/get_live_hotel_rates", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+    "X-API-KEY": "test-live-hotel-rates2025"
+  },
+  body: JSON.stringify({
+    hotelName: "Marriott Marquis, San Francisco, US",
+    checkinDate: "2026-07-15",
+    checkoutDate: "2026-07-16",
+    adults: 2,
+    currency: "USD"
+  })
+}).then(r => r.json()).then(data => {
+  console.log("✅ Hotel:", data.hotel_name);
+  console.log("💰 Price:", `$${data.rates.display_all_in_total} ${data.rates.currency}`);
+  console.log("🔗 Book:", data.booking_page_live_rates);
+  console.log("📊 Score:", data.best_match_score);
+  console.log("Full response:", data);
+});
 
