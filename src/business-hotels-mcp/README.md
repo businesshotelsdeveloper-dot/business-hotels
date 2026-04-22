@@ -25,14 +25,11 @@ This server is optimized for autonomous agents and "Bleisure" (business + leisur
 Add the following block to the `mcpServers` section of your `claude_desktop_config.json`:
 
 ```json
- {
+{
   "mcpServers": {
     "businesshotels-universal-agentic-api": {
       "command": "npx",
-      "args": [
-        "-y",
-        "@businesshotels/mcp-server"
-      ],
+      "args": ["-y", "@businesshotels/mcp-server"],
       "env": {
         "BUSINESS_HOTELS_API_KEY": "test-live-hotel-rates2025"
       }
@@ -49,12 +46,14 @@ Add the following block to the `mcpServers` section of your `claude_desktop_conf
 ```json
 {
   "mcpServers": {
-"businesshotels-remote": {
-  "description": "Live hotel rates and booking URLs from BusinessHotels.com",
-  "type": "remote",
-  "urls": {
-    "tools": "https://www.businesshotels.com/mcp-server.php?route=tools",
-    "config": "https://www.businesshotels.com/mcp-server.php?route=config"
+    "businesshotels-remote": {
+      "description": "Live hotel rates and booking URLs from BusinessHotels.com",
+      "type": "remote",
+      "urls": {
+        "tools": "https://www.businesshotels.com/mcp-server.php?route=tools",
+        "config": "https://www.businesshotels.com/mcp-server.php?route=config"
+      }
+    }
   }
 }
 ```
