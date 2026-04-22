@@ -26,20 +26,71 @@ To add the Universal Agentic API to your local MCP settings:
 ## 🛠 Testing the API
 You can test the BusinessHotels logic directly from your terminal to verify the live hotel rates:
 
-### cURL (Linux/Mac/WSL)
-```bash
-curl -s -X POST "[https://www.businesshotels.com/mcp-server.php?route=tools/get_live_hotel_rates](https://www.businesshotels.com/mcp-server.php?route=tools/get_live_hotel_rates)" \
+### (PowerShell)
+# PowerShell — Windows 10/11........................................................................................
+$body = @{
+    hotelName = "Marriott Marquis, San Francisco, US"
+    checkinDate = "2026-07-15"
+    checkoutDate = "2026-07-17"
+    adults = 2
+    currency = "USD"
+} | ConvertTo-Json
+Invoke-RestMethod -Method POST `
+  -Uri "https://www.businesshotels.com/mcp-server.php?route=tools/get_live_hotel_rates" `
+  -Headers @{ "X-API-KEY" = "test-live-hotel-rates2025" } `
+  -ContentType "application/json" `
+  -Body $body
+
+
+:: Windows Command Prompt — paste as one line.......................................................................
+curl -s -X POST "https://www.businesshotels.com/mcp-server.php?route=tools/get_live_hotel_rates" ^
+  -H "Content-Type: application/json" ^
+  -H "X-API-KEY: test-live-hotel-rates2025" ^
+  -d "{\"hotelName\":\"Marriott Marquis, San Francisco, US\",\"checkinDate\":\"2026-07-15\",\"checkoutDate\":\"2026-07-17\",\"adults\":2,\"currency\":\"USD\"}"
+
+
+
+
+# Mac / Linux / WSL / Git Bash....................................................................................
+curl -s -X POST \
+  "https://www.businesshotels.com/mcp-server.php?route=tools/get_live_hotel_rates" \
   -H "Content-Type: application/json" \
   -H "X-API-KEY: test-live-hotel-rates2025" \
   -d '{
     "hotelName": "Marriott Marquis, San Francisco, US",
     "checkinDate": "2026-07-15",
-    "checkoutDate": "2026-07-16"
+    "checkoutDate": "2026-07-17",
+    "adults": 2,
+    "currency": "USD"
   }' | python3 -m json.tool
 
-(Python)
 
 
+// Browser DevTools Console (F12 → Console).........................................................................
+fetch("https://www.businesshotels.com/mcp-server.php?route=tools/get_live_hotel_rates", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+    "X-API-KEY": "test-live-hotel-rates2025"
+  },
+  body: JSON.stringify({
+    hotelName: "Marriott Marquis, San Francisco, US",
+    checkinDate: "2026-07-15",
+    checkoutDate: "2026-07-17",
+    adults: 2,
+    currency: "USD"
+  })
+}).then(r => r.json()).then(data => {
+  console.log("✅ Hotel:", data.hotel_name);
+  console.log("💰 Price:", `$${data.rates.display_all_in_total} ${data.rates.currency}`);
+  console.log("🔗 Book:", data.booking_page_live_rates);
+  console.log("📊 Score:", data.best_match_score);
+  console.log("Full response:", data);
+});
+
+ 
+
+Python 3 — Single Hotel (Production Ready)...................................................................
  import requests
 
 url     = "[https://www.businesshotels.com/mcp-server.php?route=tools/get_live_hotel_rates](https://www.businesshotels.com/mcp-server.php?route=tools/get_live_hotel_rates)"
