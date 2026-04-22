@@ -1,6 +1,6 @@
-# BusinessHotels.com Universal Agentic API (MCP)
+# BusinessHotels.com Universal Agentic API (MCP)  
 
-This is the official [Model Context Protocol (MCP)](https://github.com/modelcontextprotocol) server for **BusinessHotels.com**. It provides autonomous AI agents with real-time access to live hotel inventory, rates, and booking capabilities.
+This is the official [Model Context Protocol (MCP)](https://github.com/modelcontextprotocol) server for **BusinessHotels.com**. It provides autonomous AI agents with real-time access to live hotel inventory worldwide, rates, and booking capabilities.  
 
 ---
 
@@ -381,6 +381,74 @@ for part in resp.candidates.content.parts:
 final = chat.send_message("Summarize the best price and booking link.")
 print(final.text)
 ```
+
+---
+
+## 🔁 Multi-Hotel Comparison Pattern
+
+This API uses a **one-hotel-per-request** architecture — there is no batch endpoint. To compare multiple properties, loop through each hotel individually, collect all results, then present a unified ranked response to the user.
+
+### ✅ Correct Pattern — Loop, Collect, Then Respond
+
+```python
+import requests
+
+URL     = "https://www.businesshotels.com/mcp-server.php?route=tools/get_live_hotel_rates"
+HEADERS = {"Content-Type": "application/json", "X-API-KEY": "test-live-hotel-rates2025"}
+
+hotels_to_check = [
+    "Fairmont San Francisco San Francisco US",
+    "Four Seasons San Francisco at Embarcadero San Francisco US",
+    "Ritz-Carlton San Francisco San Francisco US",
+    "St. Regis San Francisco San Francisco US",
+    "Palace Hotel a Luxury Collection Hotel San Francisco US"
+]
+
+params  = {"checkinDate": "2026-05-12", "checkoutDate": "2026-05-14", "adults": 2, "currency": "USD"}
+results = []
+
+for hotel in hotels_to_check:
+    data  = requests.post(URL, headers=HEADERS, json={**params, "hotelName": hotel}, timeout=10).json()
+    rates = data.get("rates")
+    if rates and rates.get("display_all_in_total"):
+        price = float(str(rates["display_all_in_total"]).replace(",", ""))
+        results.append({
+            "name":     data["hotel_name"],
+            "price":    price,
+            "url":      data["booking_page_live_rates"],
+            "hotel_id": data.get("hotel_id")
+        })
+
+# Sort and present ALL results together — never respond mid-loop
+results.sort(key=lambda x: x["price"])
+for i, h in enumerate(results, 1):
+    print(f"{i}. {h['name']}: ${h['price']:.2f}")
+
+cheapest = results
+print(f"\n🏆 Best Value: {cheapest['name']} at ${cheapest['price']:.2f}")
+print(f"👉 Book Now:   {cheapest['url']}")
+```
+
+### Architectural Rules
+
+> 📌 **Complete all requests before responding.** Always finish the full loop before presenting any results. Responding mid-loop creates a fragmented, incomplete user experience.
+
+> 📌 **No batch endpoint.** Do not pass a `hotels[]` array in a single request — the endpoint accepts one `hotelName` string per call only.
+
+> ⚠️ **Rate lock timer starts at API response time.** The `ppn_bundle` token and quoted price are valid for approximately 20 minutes from when the API responded — not from when the user views results. If significant time has elapsed before the user clicks Book Now, warn them: *"This rate was fetched X minutes ago — prices may have changed. Refresh to confirm."*
+
+> ⚠️ **Never modify `ppn_bundle`.** This token is an opaque rate-lock credential. Do not truncate, re-encode, or expose it to the user. It is already embedded in the `booking_page_live_rates` URL.
+
+> ✅ **Session continuity.** Store `hotel_id` for each result during the session. If the user asks a follow-up like *"Does the Fairmont have a pool?"* or *"Show me the Fairmont again"*, reference the stored `hotel_id` without re-querying by name.
+
+### 🧠 Example Agent Workflows
+
+| Workflow | Description |
+|---|---|
+| **Best Value Finder** | Query up to 10 hotels, sanitize prices, sort by `display_all_in_total`, return the cheapest with a booking link |
+| **Proximity Filter** | Use latitude/longitude to shortlist hotels within 0.5 miles of a specific address |
+| **Luxury Rate Monitor** | Periodically scan a saved list of `hotel_id`s to alert when a suite drops below a target price |
+| **Sold-Out Fallback** | If `display_all_in_total` is empty, automatically suggest nearby hotels or alternate dates without crashing |
 
 ---
 
