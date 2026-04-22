@@ -39,10 +39,11 @@ Add to your `claude_desktop_config.json`:
 
  
 
-## : Remote SSE (Best for Cursor & Windsurf)
-Use this for cloud-native integration without needing to install local dependencies.
+ ## Remote SSE (Best for Cursor & Windsurf)
 
-JSON
+ 
+
+```json
 {
   "mcpServers": {
     "businesshotels-remote": {
@@ -56,8 +57,6 @@ JSON
   }
 }
 ```
-
----
 
 ## API Reference
 
