@@ -7,18 +7,18 @@
 
  
 
-## 🌍  BusinessHotels Universal Agentic API - Universal LLM Compatibility
-The **BusinessHotels.com MCP Server** uses the OpenAI-compatible JSON Schema format—the universal standard accepted by all leading AI platforms. The MCP discovery endpoint enables zero-config auto-registration across the entire agentic ecosystem.
+## 🌍 Universal LLM Compatibility
+The **BusinessHotels.com MCP Server** is built on the OpenAI-compatible JSON Schema format—the universal standard accepted by all leading AI platforms. This enables zero-config auto-registration across the entire agentic ecosystem.
 
 | Platform | Integration Method | Status |
 | :--- | :--- | :--- |
-| **Claude** | **Native MCP Connector** (auto-discovery) or function calling. | ✅ Fully supported |
-| **ChatGPT** | **Function Calling API** & GPT Assistant Actions. | ✅ Fully supported |
-| **Google Gemini** | **Function Calling API** (utilizing the same JSON Schema). | ✅ Fully supported |
-| **Perplexity** | **Function calling + MCP Connectors** (via Mac/Comet). | ✅ Fully supported |
-| **Microsoft Copilot** | **Copilot Studio** custom actions or MCP plugin manifest. | ✅ Fully supported |
-| **Cursor / Windsurf** | **Native MCP Connector** for real-time IDE integration. | ✅ Fully supported |
-| **Any MCP Client** | **Auto-discovery** via the `?route=tools` endpoint. | ✅ Protocol-native |
+| 🟣 **Claude** | **Native MCP Connector** (auto-discovery) | ✅ **Fully supported** |
+| 🟢 **ChatGPT** | **Function Calling API** & GPT Assistant Actions | ✅ **Fully supported** |
+| 🔵 **Google Gemini** | **Function Calling API** (JSON Schema) | ✅ **Fully supported** |
+| 🔴 **Perplexity** | **Function calling + MCP Connectors** | ✅ **Fully supported** |
+| 🪟 **MS Copilot** | **Copilot Studio** or MCP plugin manifest | ✅ **Fully supported** |
+| 💻 **Cursor / Windsurf** | **Native MCP Connector** (IDE integration) | ✅ **Fully supported** |
+| 🌐 **Any MCP Client** | **Auto-discovery** via `?route=tools` | ✅ **Protocol-native** |
 
 ---
 
@@ -31,6 +31,7 @@ For platforms requiring manifest files or discovery URLs:
 * **AI Plugin Manifest:** `https://www.businesshotels.com/.well-known/ai-plugin.json`
 
 > [!TIP]
+> **Zero-Prompt Engineering:** Because we adhere to the **Model Context Protocol**, agents can autonomously determine required parameters like `hotelName` and `checkinDate` without manual instructions.
 > Because we adhere to the **Model Context Protocol**, agents can autonomously determine the required parameters (`hotelName`, `checkinDate`, `checkoutDate`) without manual prompt engineering.
 
 This is the official [Model Context Protocol (MCP)](https://modelcontextprotocol.io) server for **BusinessHotels.com**. It provides autonomous AI agents with **instant (<1s)** access to live hotel inventory, rates, and booking capabilities worldwide.
