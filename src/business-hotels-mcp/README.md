@@ -5,7 +5,31 @@
 ![Latency](https://img.shields.io/badge/Latency-%3C800ms-green?style=flat-square&logo=speedtest&logoColor=white)
 ![Focus](https://img.shields.io/badge/Focus-Bleisure-orange)
 
-# BusinessHotels.com Universal Agentic API (MCP)
+## 🌍 Universal LLM Compatibility
+The **BusinessHotels.com MCP Server** uses the OpenAI-compatible JSON Schema format—the universal standard accepted by all leading AI platforms. The MCP discovery endpoint enables zero-config auto-registration across the entire agentic ecosystem.
+
+| Platform | Integration Method | Status |
+| :--- | :--- | :--- |
+| **Claude** | **Native MCP Connector** (auto-discovery) or function calling. | ✅ Fully supported |
+| **ChatGPT** | **Function Calling API** & GPT Assistant Actions. | ✅ Fully supported |
+| **Google Gemini** | **Function Calling API** (utilizing the same JSON Schema). | ✅ Fully supported |
+| **Perplexity** | **Function calling + MCP Connectors** (via Mac/Comet). | ✅ Fully supported |
+| **Microsoft Copilot** | **Copilot Studio** custom actions or MCP plugin manifest. | ✅ Fully supported |
+| **Cursor / Windsurf** | **Native MCP Connector** for real-time IDE integration. | ✅ Fully supported |
+| **Any MCP Client** | **Auto-discovery** via the `?route=tools` endpoint. | ✅ Protocol-native |
+
+---
+
+### 🔗 Technical Discovery Endpoints
+For platforms requiring manifest files or discovery URLs:
+
+* **MCP Tools Endpoint:** `https://www.businesshotels.com/mcp-server.php?route=tools`
+* **MCP Discovery Spec:** `https://www.businesshotels.com/.well-known/mcp.json`
+* **OpenAPI Specification:** `https://www.businesshotels.com/openapi.json`
+* **AI Plugin Manifest:** `https://www.businesshotels.com/.well-known/ai-plugin.json`
+
+> [!TIP]
+> Because we adhere to the **Model Context Protocol**, agents can autonomously determine the required parameters (`hotelName`, `checkinDate`, `checkoutDate`) without manual prompt engineering.
 
 This is the official [Model Context Protocol (MCP)](https://modelcontextprotocol.io) server for **BusinessHotels.com**. It provides autonomous AI agents with **instant (<1s)** access to live hotel inventory, rates, and booking capabilities worldwide.
 
