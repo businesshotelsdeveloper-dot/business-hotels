@@ -33,8 +33,7 @@ This server is optimized for autonomous agents and "Bleisure" (business + leisur
 * **Real-Time Accuracy:** Unlike cached databases, our "Agentic API" fetches live inventory directly from the global distribution system (GDS) the moment the tool is called.
 * **Optimized for Parallelism:** Use the [Multi-Hotel Comparison Pattern](#-multi-hotel-comparison-pattern) below to fetch rates for 5+ hotels simultaneously in under 2 seconds.
 
-## Quick Configuration
-...
+ 
 
 ## Quick Configuration
 
