@@ -28,13 +28,13 @@ Add the following block to the `mcpServers` section of your `claude_desktop_conf
 ```json
 {
   "mcpServers": {
-    "businesshotels-universal-agentic-api": {
-      "command": "npx",
-      "args": ["-y", "@businesshotels/mcp-server"],
-      "env": {
-        "BUSINESS_HOTELS_API_KEY": "test-live-hotel-rates2025"
-      }
-    }
+ "businesshotels-universal-agentic-api": {
+  "command": "npx",
+  "args": ["-y", "@businesshotels/mcp-server"],
+  "env": {
+    "BUSINESS_HOTELS_API_KEY": "test-live-hotel-rates2025"
+  }
+}
   }
 }
 ```
