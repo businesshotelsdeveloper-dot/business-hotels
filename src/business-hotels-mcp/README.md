@@ -33,7 +33,7 @@ Add the following block to the `mcpServers` section of your `claude_desktop_conf
   }
 }
  
-```json
+```
 
  ## Remote SSE (Best for Cursor & Windsurf)
 
