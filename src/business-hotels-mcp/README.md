@@ -404,7 +404,7 @@ hotels_to_check = [
     "Palace Hotel a Luxury Collection Hotel San Francisco US"
 ]
 
-params  = {"checkinDate": "2026-05-12", "checkoutDate": "2026-05-14", "adults": 2, "currency": "USD"}
+params  = {"checkinDate": "2026-07-12", "checkoutDate": "2026-07-14", "adults": 2, "currency": "USD"}
 results = []
 
 for hotel in hotels_to_check:
