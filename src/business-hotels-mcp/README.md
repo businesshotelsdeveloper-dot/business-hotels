@@ -19,24 +19,19 @@ This server is optimized for autonomous agents and "Bleisure" (business + leisur
 
 ---
 
-## Quick Configuration (Claude Desktop)
+## Quick Configuration
 
 ### Option 1: Local Stdio (Best for Claude Desktop)
 Add the following block to the `mcpServers` section of your `claude_desktop_config.json`:
 
 ```json
-{
-  "mcpServers": {
-    "businesshotels-universal-agentic-api": {
-      "command": "npx",
-      "args": ["-y", "@businesshotels/mcp-server"],
-      "env": {
-        "BUSINESS_HOTELS_API_KEY": "test-live-hotel-rates2025"
-      }
-    }
+"businesshotels-universal-agentic-api": {
+  "command": "npx",
+  "args": ["-y", "@businesshotels/mcp-server"],
+  "env": {
+    "BUSINESS_HOTELS_API_KEY": "test-live-hotel-rates2025"
   }
 }
-
  
 
  ## Remote SSE (Best for Cursor & Windsurf)
