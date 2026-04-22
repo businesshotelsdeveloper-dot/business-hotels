@@ -52,7 +52,7 @@ Add to your `claude_desktop_config.json`:
 
 | Parameter | Type | Required | Notes |
 |---|---|---|---|
-| `hotelName` | string | ✅ | Hotel + city + country, **no commas**. E.g. `"Wynn Las Vegas US"` |
+| `hotelName` | string | ✅ | Hotel + city + state, country, **use commas**. E.g. `"Wynn Las Vegas, NV, US"` |
 | `checkinDate` | string | ✅ | Format: `YYYY-MM-DD` |
 | `checkoutDate` | string | ✅ | Format: `YYYY-MM-DD` |
 | `adults` | integer | — | Default: `2` |
@@ -94,7 +94,7 @@ fetch("https://www.businesshotels.com/mcp-server.php?route=tools/get_live_hotel_
     "X-API-KEY": "test-live-hotel-rates2025"
   },
   body: JSON.stringify({
-    hotelName:    "Luxor Las Vegas NV US",
+    hotelName:    "Luxor Las Vegas, NV, US",
     checkinDate:  "2026-07-15",
     checkoutDate: "2026-07-16",
     adults: 2,
@@ -122,7 +122,7 @@ URL     = "https://www.businesshotels.com/mcp-server.php?route=tools/get_live_ho
 HEADERS = {"X-API-KEY": "test-live-hotel-rates2025", "Content-Type": "application/json"}
 
 payload = {
-    "hotelName":    "San Francisco Marriott Marquis San Francisco CA US",
+    "hotelName":    "San Francisco Marriott Marquis, San Francisco, CA US",
     "checkinDate":  "2026-06-20",
     "checkoutDate": "2026-06-21",
     "adults": 2,
@@ -155,7 +155,7 @@ curl -s -X POST \
   -H "Content-Type: application/json" \
   -H "X-API-KEY: test-live-hotel-rates2025" \
   -d '{
-    "hotelName":    "Luxor Las Vegas Las Vegas US",
+    "hotelName":    "Luxor Las Vegas, Las Vegas, NV, US",
     "checkinDate":  "2026-07-20",
     "checkoutDate": "2026-07-21",
     "adults": 2,
@@ -187,7 +187,7 @@ async function getHotelRates(hotelName, checkinDate, checkoutDate, adults = 2, c
 }
 
 // --- Usage ---
-const data = await getHotelRates("Luxor Las Vegas Las Vegas US", "2026-07-20", "2026-07-21");
+const data = await getHotelRates("Luxor Las Vegas, Las Vegas, NV, US", "2026-07-20", "2026-07-21");
 
 const rawPrice = data?.rates?.display_all_in_total;
 if (!rawPrice || String(rawPrice).trim() === "") {
@@ -230,7 +230,7 @@ tools = [{
         "parameters": {
             "type": "object",
             "properties": {
-                "hotelName":    {"type": "string",  "description": "Hotel + city + country, no commas. E.g. 'Wynn Las Vegas US'"},
+                "hotelName":    {"type": "string",  "description": "Hotel + city + country, use commas. E.g. 'Wynn Las Vegas, NV, US'"},
                 "checkinDate":  {"type": "string",  "format": "date"},
                 "checkoutDate": {"type": "string",  "format": "date"},
                 "adults":       {"type": "integer", "default": 2},
@@ -397,11 +397,11 @@ URL     = "https://www.businesshotels.com/mcp-server.php?route=tools/get_live_ho
 HEADERS = {"Content-Type": "application/json", "X-API-KEY": "test-live-hotel-rates2025"}
 
 hotels_to_check = [
-    "Fairmont San Francisco San Francisco US",
-    "Four Seasons San Francisco at Embarcadero San Francisco US",
-    "Ritz-Carlton San Francisco San Francisco US",
-    "St. Regis San Francisco San Francisco US",
-    "Palace Hotel a Luxury Collection Hotel San Francisco US"
+    "Fairmont San Francisco, San Francisco, CA, US",
+    "Four Seasons San Francisco at Embarcadero San Francisco, CA, US",
+    "Ritz-Carlton San Francisco, San Francisco, CA, US",
+    "St. Regis San Francisco, San Francisco, CA, US",
+    "Palace Hotel a Luxury Collection Hotel, San Francisco,  CA, US"
 ]
 
 params  = {"checkinDate": "2026-07-12", "checkoutDate": "2026-07-14", "adults": 2, "currency": "USD"}
