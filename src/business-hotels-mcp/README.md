@@ -7,10 +7,7 @@
 
 This is the official [Model Context Protocol (MCP)](https://modelcontextprotocol.io) server for **BusinessHotels.com**. It provides autonomous AI agents with **instant (<1s)** access to live hotel inventory, rates, and booking capabilities worldwide.
 
-# BusinessHotels.com Universal Agentic API (MCP)
-
-This is the official [Model Context Protocol (MCP)](https://github.com/modelcontextprotocol) server for **BusinessHotels.com**. It provides autonomous AI agents with real-time access to live hotel inventory worldwide, rates, and booking capabilities.  
-
+ 
 ---
 
 ## Connection & Discovery 
