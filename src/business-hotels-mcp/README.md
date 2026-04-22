@@ -25,6 +25,17 @@ This server is optimized for autonomous agents and "Bleisure" (business + leisur
 
 ---
 
+...
+| [Full API Docs](https://www.businesshotels.com/tool-config.html) |
+
+## 🚀 Performance & Reliability
+* **Ultra-Low Latency:** Engineered for agentic workflows where speed is critical. Most requests return in **under 800ms**, allowing agents to compare multiple hotels in parallel without hitting LLM timeout limits.
+* **Real-Time Accuracy:** Unlike cached databases, our "Agentic API" fetches live inventory directly from the global distribution system (GDS) the moment the tool is called.
+* **Optimized for Parallelism:** Use the [Multi-Hotel Comparison Pattern](#-multi-hotel-comparison-pattern) below to fetch rates for 5+ hotels simultaneously in under 2 seconds.
+
+## Quick Configuration
+...
+
 ## Quick Configuration
 
 ### Option 1: Local Stdio (Best for Claude Desktop)
