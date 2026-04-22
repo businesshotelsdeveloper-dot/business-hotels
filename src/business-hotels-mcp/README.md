@@ -24,6 +24,7 @@ This server is optimized for autonomous agents and "Bleisure" (business + leisur
 ### Option 1: Local Stdio (Best for Claude Desktop)
 Add the following block to the `mcpServers` section of your `claude_desktop_config.json`:
 
+ 
 ```json
 "businesshotels-universal-agentic-api": {
   "command": "npx",
