@@ -20,7 +20,7 @@ To add the Universal Agentic API to your local MCP settings, paste this into you
       "command": "npx",
       "args": ["-y", "@businesshotels/mcp-server"],
       "env": {
-        "BUSINESS_HOTELS_API_KEY": "YOUR_KEY_HERE"
+        "BUSINESS_HOTELS_API_KEY": "test-live-hotel-rates2025"
       }
     }
   }
