@@ -5,7 +5,7 @@ This is the official [Model Context Protocol (MCP)](https://github.com/modelcont
 ## Connection & Discovery
 This server is optimized for autonomous agents and "Bleisure" (business + leisure) travel workflows.
 
-- **MCP Tools Endpoint:** `https://www.businesshotels.com/mcp-server.php?route=tools`
+- **MCP Tools Endpoint:** https://www.businesshotels.com/mcp-server.php?route=tool
 - **OpenAPI Spec:** [openapi.json](https://www.businesshotels.com/openapi.json)
 - MCP Discovery Spec: https://www.businesshotels.com/.well-known/mcp.json
 - **Plugin Manifest:** [.well-known/ai-plugin.json](https://www.businesshotels.com/.well-known/ai-plugin.json)
