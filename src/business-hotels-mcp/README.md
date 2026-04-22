@@ -2,6 +2,8 @@
 ![License](https://img.shields.io/badge/License-MIT-green)
 ![Speed](https://img.shields.io/badge/Latency-<1s-brightgreen)
 ![Market](https://img.shields.io/badge/Focus-Bleisure-orange)
+![Latency](https://img.shields.io/badge/Latency-%3C800ms-green?style=flat-square&logo=speedtest&logoColor=white)
+![Data Source](https://img.shields.io/badge/Data-Verified_GDS-blue?style=flat-square&logo=googlecloud&logoColor=white)
 
 # BusinessHotels.com Universal Agentic API (MCP)
 
