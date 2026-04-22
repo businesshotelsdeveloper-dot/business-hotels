@@ -39,7 +39,7 @@ fetch("https://www.businesshotels.com/mcp-server.php?route=tools/get_live_hotel_
     "X-API-KEY": "test-live-hotel-rates2025"
   },
   body: JSON.stringify({
-    hotelName: "Marriott Marquis, San Francisco, US",
+    hotelName: "Luxor, Las Vegas, NV, US",
     checkinDate: "2026-07-15",
     checkoutDate: "2026-07-16",
     adults: 2,
