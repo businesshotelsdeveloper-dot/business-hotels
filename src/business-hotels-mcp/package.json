@@ -1,11 +1,26 @@
 {
   "name": "@businesshotels/mcp-server",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Universal Agentic API for real-time hotel pricing and booking automation via BusinessHotels.com",
   "main": "build/index.js",
   "type": "module",
   "bin": {
     "business-hotels-mcp": "build/index.js"
+  },
+  "mcp": {
+    "name": "Business Hotels AI Price Finder",
+    "description": "Autonomous protocol for hotel discovery and real-time rate verification using MCP 1.0.",
+    "logo": "https://www.businesshotels.com/images/logo-neon.png",
+    "categories": [
+      "travel",
+      "hospitality",
+      "booking"
+    ],
+    "links": {
+      "homepage": "https://www.businesshotels.com/ai-hotel-finder.html",
+      "documentation": "https://www.businesshotels.com/tool-config.html",
+      "repository": "https://github.com/businesshotelsdeveloper-dot/businesshotels.com"
+    }
   },
   "files": [
     "build"
@@ -26,7 +41,8 @@
     "hotels",
     "booking",
     "agentic-ai",
-    "mcp-server"
+    "mcp-server",
+    "real-time-pricing"
   ],
   "author": "Drago Maximov",
   "license": "MIT",
