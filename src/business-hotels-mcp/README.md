@@ -251,7 +251,7 @@ async function getHotelRates(hotelName, checkinDate, checkoutDate, adults = 2, c
 }
 
 // --- Usage ---
-const data = await getHotelRates("Luxor Las Vegas, Las Vegas, NV, US", "2026-07-20", "2026-07-21");
+const data = await getHotelRates("Bellagio, Las Vegas, NV, US", "2026-07-20", "2026-07-21");
 
 const rawPrice = data?.rates?.display_all_in_total;
 if (!rawPrice || String(rawPrice).trim() === "") {
