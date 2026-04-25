@@ -1,10 +1,10 @@
+
 [![smithery badge](https://smithery.ai/badge/businesshotelsdeveloper/business-hotels)](https://smithery.ai/servers/businesshotelsdeveloper/business-hotels)
 ![MCP Version](https://img.shields.io/badge/MCP-1.0-blue)
 ![Travel](https://img.shields.io/badge/Travel-Global_Inventory-blueviolet)
 ![Hotel Rates](https://img.shields.io/badge/Hotel_Prices-Live_GDS-red)
 ![Latency](https://img.shields.io/badge/Latency-%3C800ms-green?style=flat-square&logo=speedtest&logoColor=white)
 ![Focus](https://img.shields.io/badge/Focus-Bleisure-orange)
-
  
 
 ## 🌍  BusinessHotels.com Agentic API - Universal LLM Compatibility. 
