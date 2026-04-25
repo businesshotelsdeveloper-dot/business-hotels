@@ -455,7 +455,8 @@ This API uses a **one-hotel-per-request** architecture. To maintain sub-second r
 In a sequential loop, 5 hotels would take ~4 seconds. With the parallel code below using `concurrent.futures`, all requests fire simultaneously, finishing the entire comparison in the time it takes for a single request.
 
 ```python
-  import requests, json
+
+import requests, json
 
 url = "https://www.businesshotels.com/mcp-server.php?route=tools/get_live_hotel_rates"
 headers = {"Content-Type": "application/json", "X-API-KEY": "test-live-hotel-rates2025"}
@@ -487,6 +488,9 @@ for i, h in enumerate(results, 1):
 cheapest = results[0]
 print(f"\n🏆 Best Value: {cheapest['name']} at ${cheapest['price']:.2f}")
 print(f"👉 Book Now: {cheapest['url']}")
+
+
+
 ```
 
 ### ⚠️ Critical Implementation Guardrails
