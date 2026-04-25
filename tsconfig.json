@@ -5,7 +5,6 @@
     "moduleResolution": "NodeNext",
     "outDir": "./dist",
     "rootDir": "src/business-hotels-mcp",
-    "baseUrl": ".",
     "strict": true,
     "skipLibCheck": true,
     "esModuleInterop": true
