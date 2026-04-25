@@ -448,7 +448,7 @@ print(final.text)
 
 ---
 
-## 🔁 Multi-Hotel Comparison Pattern (High Performance)
+## 🔁 Multi-Hotel Comparison Pattern (High Performance) - Python
 This API uses a **one-hotel-per-request** architecture. To maintain sub-second response times for comparisons, agents must use **asynchronous parallelism** rather than sequential loops.
 
 ## ✅ Correct Pattern — Parallel Fetching (Under 1 Second)
