@@ -3,12 +3,12 @@
   "version": "1.0.0",
   "type": "module",
   "bin": {
-    "business-hotels-mcp": "src/business-hotels-mcp/dist/index.js"
+    "business-hotels-mcp": "dist/index.js"
   },
   "scripts": {
-    "build": "tsc -p src/business-hotels-mcp/tsconfig.json",
+    "build": "tsc src/business-hotels-mcp/index.ts --outDir dist --module NodeNext --target ES2022 --moduleResolution NodeNext",
     "prepare": "npm run build",
-    "start": "node src/business-hotels-mcp/dist/index.js"
+    "start": "node dist/index.js"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.0.1",
