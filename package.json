@@ -1,22 +1,29 @@
 {
   "name": "business-hotels-mcp",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "type": "module",
+  "description": "Universal Agentic API for BusinessHotels.com",
+  "main": "dist/index.js",
   "bin": {
     "business-hotels-mcp": "dist/index.js"
   },
   "scripts": {
     "build": "tsc",
+    "watch": "tsc -w",
     "prepare": "npm run build",
-    "start": "node dist/index.js"
+    "start": "node dist/index.js",
+    "inspect": "mcp-inspect dist/index.js",
+    "validate": "curl -s https://www.businesshotels.com/mcp-server.php?route=tools | jq ."
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.0.1",
     "dotenv": "^16.4.5",
-    "zod": "^3.22.4"
+    "zod": "^3.22.4",
+    "axios": "^1.6.7"
   },
   "devDependencies": {
     "typescript": "^5.3.3",
-    "@types/node": "^20.11.24"
+    "@types/node": "^20.11.24",
+    "@modelcontextprotocol/inspector": "^0.1.0"
   }
 }
