@@ -42,7 +42,7 @@ The **BusinessHotels.com MCP Server** is built on the OpenAI-compatible JSON Sch
 
 ---
 
-### 🔗 Technical Discovery & Agentic Endpoints
+ 
 
 ### 🔗 Technical Discovery & Multi-Model Endpoints
 
