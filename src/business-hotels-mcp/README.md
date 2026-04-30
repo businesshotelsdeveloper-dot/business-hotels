@@ -46,15 +46,16 @@ The **BusinessHotels.com MCP Server** is built on the OpenAI-compatible JSON Sch
 
 This server is a **Multi-Model Transport Hub** that provides autonomous AI agents with instant (<1s) access to live hotel inventory. It is optimized for the **Model Context Protocol (MCP)** and OpenAI-compatible tool calling.
 
-| LLM Platform | Protocol / Transport | Primary Integration URL |
-| :--- | :--- | :--- |
-| **Gemini / Vertex AI** | MCP (Stateless/SSE) | `https://www.businesshotels.com/mcp-server-gemini.php` |
-| **Claude.ai** | MCP (SSE) | `https://www.businesshotels.com/mcp-server-claude.php` |
-| **ChatGPT (Plus/Pro)** | MCP (OpenAPI 3.1) | `https://www.businesshotels.com/mcp-server-chatgpt.php` |
-| **Perplexity Comet** | MCP (JSON-RPC) | `https://www.businesshotels.com/mcp-server-perplexity.php` |
-| **Universal / Dev** | MCP (Unified) | `https://www.businesshotels.com/mcp-server.php?route=tools` |
-| **Discovery Spec** | JSON Manifest | `https://www.businesshotels.com/.well-known/mcp.json` |
-| **OpenAPI Spec** | Spec (JSON) | `https://www.businesshotels.com/openapi.json` |
+| LLM Platform          | Protocol / Transport       | Primary Integration URL |
+|-----------------------|----------------------------|-------------------------------------------------------------|
+| **Grok / xAI**        | MCP (Remote / Tools)       | `https://www.businesshotels.com/mcp-server-grok.php?route=tools` |
+| **Gemini / Vertex AI**| MCP (Stateless/SSE)        | `https://www.businesshotels.com/mcp-server-gemini.php` |
+| **Claude.ai**         | MCP (SSE)                  | `https://www.businesshotels.com/mcp-server-claude.php` |
+| **ChatGPT (Plus/Pro)**| MCP (OpenAPI 3.1)          | `https://www.businesshotels.com/mcp-server-chatgpt.php` |
+| **Perplexity Comet**  | MCP (JSON-RPC)             | `https://www.businesshotels.com/mcp-server-perplexity.php` |
+| **Universal / Dev**   | MCP (Unified)              | `https://www.businesshotels.com/mcp-server.php?route=tools` |
+| **Discovery Spec**    | JSON Manifest              | `https://www.businesshotels.com/.well-known/mcp.json` |
+| **OpenAPI Spec**      | Spec (JSON)                | `https://www.businesshotels.com/openapi.json` |
 
 > [!TIP]
 > **Zero-Prompt Engineering:** By adhering to **Strict Schema Validation**, agents autonomously determine required parameters (`hotelName`, `checkinDate`, `checkoutDate`) and validate them locally. This ensures a 100% reliable handshake between the agent and the **BusinessHotels** inventory.
